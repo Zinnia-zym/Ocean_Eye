@@ -26,7 +26,7 @@ flowchart LR
 
     subgraph host[上位机 · 算法层]
         DET[YOLOv8n 视觉检测]
-        FUSE[光-声融合<br/>置信度阈值自适应]
+        FUSE[光-声融合 / 阈值自适应]
         INFER[C++ / ONNX 边缘推理]
     end
 
@@ -39,7 +39,8 @@ flowchart LR
     DET --> FUSE
     INFER -.->|部署| DET
     SONAR -->|UART 距离| MCU
-    MCU <-->|串口 UART| FUSE
+    MCU -->|串口 UART| FUSE
+    FUSE -->|控制指令| MCU
     MCU --> DISP
 ```
 
