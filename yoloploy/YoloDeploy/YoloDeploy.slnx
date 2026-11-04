@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="YoloDeploy.vcxproj" Id="1fbfcd19-d8ab-480b-9ea4-aa1c87dfc8a2" />
+</Solution>

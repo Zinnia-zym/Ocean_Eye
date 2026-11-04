@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+"ocean_eye\startup_stm32f103xe.o"
+"ocean_eye\main.o"
+"ocean_eye\stm32f1xx_it.o"
+"ocean_eye\stm32f1xx_hal_msp.o"
+"ocean_eye\soft_i2c.o"
+"ocean_eye\ssd1306.o"
+"ocean_eye\ssd1306_fonts.o"
+"ocean_eye\stm32f1xx_hal_gpio_ex.o"
+"ocean_eye\stm32f1xx_hal_tim.o"
+"ocean_eye\stm32f1xx_hal_tim_ex.o"
+"ocean_eye\stm32f1xx_hal_uart.o"
+"ocean_eye\stm32f1xx_hal.o"
+"ocean_eye\stm32f1xx_hal_rcc.o"
+"ocean_eye\stm32f1xx_hal_rcc_ex.o"
+"ocean_eye\stm32f1xx_hal_gpio.o"
+"ocean_eye\stm32f1xx_hal_dma.o"
+"ocean_eye\stm32f1xx_hal_cortex.o"
+"ocean_eye\stm32f1xx_hal_pwr.o"
+"ocean_eye\stm32f1xx_hal_flash.o"
+"ocean_eye\stm32f1xx_hal_flash_ex.o"
+"ocean_eye\stm32f1xx_hal_exti.o"
+"ocean_eye\system_stm32f1xx.o"
+--strict --scatter "Ocean_Eye\Ocean_Eye.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Ocean_Eye.map" -o Ocean_Eye\Ocean_Eye.axf

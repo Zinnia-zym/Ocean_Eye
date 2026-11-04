@@ -1,0 +1,60 @@
+# ===== Python =====
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ===== IDE / 编辑器 =====
+.idea/
+.vs/
+*.suo
+*.user
+.vscode/
+
+# ===== C++ / VS 编译产物 =====
+x64/
+Debug/
+Release/
+ipch/
+*.obj
+*.pdb
+*.ilk
+*.ipch
+*.tlog
+*.lastbuildstate
+*.recipe
+*.idb
+
+# ===== OpenCV 动态库 / 链接库（太大，README 说明自行下载）=====
+opencv_world*.dll
+opencv_world*.lib
+
+# ===== STM32 / Keil 编译产物 =====
+*.o
+*.crf
+*.lst
+*.d
+*.axf
+*.map
+*.htm
+*.scvd
+*.uvguix.*
+Objects/
+Listings/
+DebugConfig/
+RTE/
+
+# ===== 训练产物（权重已放 models/）=====
+runs/
+yolov8n.pt
+
+# ===== 比赛提交的大文件 =====
+交的/*.mp4
+交的/*.zip
+交的/附件/
+
+# ===== 系统 =====
+.DS_Store
+Thumbs.db
+*.tmp

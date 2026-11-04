@@ -1,0 +1,6 @@
+path: C:/Users/Lenovo/Desktop/shentong/dataset_yolo
+train: images/train
+val: images/val
+
+nc: 4
+names: ['bottle', 'soda_can', 'plastic', 'shell']
