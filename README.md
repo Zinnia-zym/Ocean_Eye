@@ -17,14 +17,30 @@
 
 ## 🏗 系统架构
 
-```
-┌─────────────┐   ┌──────────────────────┐   ┌──────────────┐
-│  水下摄像头   │──▶│  上位机（Python/C++）  │   │  STM32F103    │
-│             │   │  · 视觉检测 (YOLOv8n) │◀──│  · 底层控制    │
-└─────────────┘   │  · 光-声融合后处理     │串口│  · OLED/红绿灯 │
-                  └──────────────────────┘   └──────────────┘
-                          ▲
-                超声波传感器（距离先验）
+```mermaid
+flowchart LR
+    subgraph sensing[感知层]
+        CAM[水下摄像头]
+        SONAR[超声波传感器]
+    end
+
+    subgraph host[上位机 · 算法层]
+        DET[YOLOv8n 视觉检测]
+        FUSE[光-声融合<br/>置信度阈值自适应]
+        INFER[C++ / ONNX 边缘推理]
+    end
+
+    subgraph embed[嵌入式 · 控制层]
+        MCU[STM32F103]
+        DISP[OLED / 红绿灯]
+    end
+
+    CAM -->|图像| DET
+    DET --> FUSE
+    INFER -.->|部署| DET
+    SONAR -->|UART 距离| MCU
+    MCU <-->|串口 UART| FUSE
+    MCU --> DISP
 ```
 
 ---
