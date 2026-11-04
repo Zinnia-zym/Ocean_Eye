@@ -108,18 +108,6 @@ python test_onnx.py
 
 ---
 
-## 📈 模型性能
-
-| 版本 | 推理耗时 | 备注 |
-|---|---|---|
-| PyTorch | XX ms | `best.pt` |
-| ONNX (Python) | XX ms | `best.onnx`，onnxruntime CPU |
-| C++ (OpenCV dnn) | XX ms | 见 `yoloploy/` |
-
-> 指标待补充：mAP@0.5、FPS、量化（FP32/INT8）对比曲线。
-
----
-
 ## 🛠 技术栈
 
 `STM32` · `YOLOv8n` · `ONNX` · `OpenCV` · `C++` · `Python` · `ROS2`（规划中）
